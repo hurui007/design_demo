@@ -16,9 +16,10 @@ public class SingletonType6 {
 class Singleton{
 	//volatile 这个关键字是为了在线程间同步使用
 	private static volatile Singleton instance;
-	
+	private static volatile int syncStatus = 1;
+
 	private Singleton() {}
-	
+
 	/**
 	 * 双重检查，线程安全，不会浪费内存，推荐使用
 	 * @return
@@ -33,5 +34,6 @@ class Singleton{
 		}
 		return instance;
 	}
-	
+
+
 }
